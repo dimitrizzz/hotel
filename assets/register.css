@@ -1,0 +1,115 @@
+
+    * {
+      box-sizing: border-box;
+    }
+
+    header {
+      border-bottom: 1px solid grey;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 5px;
+    }
+
+    .hotels {
+      color: black;
+      text-decoration: none;
+    }
+
+    .hotels:hover {
+      color: red;
+
+    }
+
+    
+
+    body {
+      margin: 0;
+      width: 100%;
+      display: grid;
+      grid-template-rows: 50px 900px 50px;
+      grid-template-areas:
+        "header"
+        "body"
+        "footer";
+
+
+    }
+
+    .container {
+      display: flex;
+      flex-direction:column;
+        align-items:center;
+        padding: 50px;
+        width: 100%;
+        text-align: center;
+        
+    }
+    .form-group{
+        width: 100%;
+        display: contents;
+    }
+    .home {
+      color: #ff5722;
+    }
+    input {
+        width: 200px;
+        padding:10px;
+        border-radius: 5px;
+        margin: 8px;
+        text-align: center;
+    }
+    
+   button {
+        background-color: #ff5722;
+    padding: 10px;
+    margin: 5px;
+    border: 1px;
+    border-radius: 5px;
+    color: white;
+    width: 150px;
+    cursor: pointer;
+    }
+    
+
+    .button:hover {
+        background-color: red;
+    }
+    
+
+    footer {
+      background-color: lightgrey;
+      text-align: center;
+      color: grey;
+      grid-area: footer;
+      border-top: 2px solid gray;
+    }
+
+    @media screen and (min-width: 572px) {
+      footer {
+        margin-top: auto;
+      }
+    }
+
+    @media screen and (min-width: 769px) {
+      body {
+        font-size: 112%;
+      }
+    }
+
+    @media screen and (min-width:1025px) {}
+
+    @media screen and (min-width: 1201px) {
+      body {
+        font-size: 125%;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+
+
+      }
+    }
+    
+ 
