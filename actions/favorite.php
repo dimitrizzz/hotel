@@ -44,4 +44,4 @@ require_once __DIR__ .'/../boot/boot.php';
 	
    
 	// Return to home page
-	header (sprintf('Location: ../assets/room.php?room_id=%s' , $roomId));
+	header (sprintf('Location: ../assets/room_id=%s&Check-in=%s&Check-out=%s' , $roomId,$checkInDate,$checkOutDate ));

@@ -31,9 +31,9 @@ $checkOutDate = $_REQUEST['Check-out'];
 // print_r($allTypes);
 
 
-$allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($checkOutDate), $selectedCity, $selectedTypeId);
+$allAvailableRooms = $room->search(new DateTimeAlias($checkInDate), new DateTimeAlias($checkOutDate), $selectedCity, $selectedTypeId);
 // print_r($allAvailableRooms);
-$date = new DateTime('now');
+$date = new DateTimeAlias('now');
 // if (isset($_GET['city'])) {
 //   $city = $_GET['city'];
 // } else {
@@ -79,7 +79,7 @@ $city = isset($_REQUEST['city']) ? $_REQUEST['city'] : 'Athens';
           <div class="Profile"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
               <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
             </svg>
-            <a href="register.php" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>Profile</a>
+            <a href="register.php"  class="glyphicon glyphicon-user profile">Profile</a>
           </div>
         </div>
 
@@ -172,20 +172,14 @@ $city = isset($_REQUEST['city']) ? $_REQUEST['city'] : 'Athens';
                 <div class="room-flex">
                   <div class="hello">
                     <div class="img1">
-                      <img class="room-preview" src="./images/<?php echo $availableRoom['photo_url']; ?>">
+                      <img class="room-preview" src="./images/<?php echo $availableRoom['photo_url']; ?>" >
                       <i class="fa fa-camera"></i>
                     </div>
                     <div class="room-details">
                       <h4><?php echo $availableRoom['name'] ?></h4>
                       <p><?php echo $availableRoom['area'] ?></p>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                        ex ea commodo consequat.
-                        Duis
-                        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                        laborum.</p>
-                      <form name="searchForm" method="post" action="./room.php" onsubmit="true">
+                      <p><?php echo $availableRoom['description_short'] ?></p>
+                      <form name="searchForm" method="post" action="./room.php" onsubmit="return validateForm()">
                         <div class="button1">
                           <input type="text" hidden name="room_id" value="<?php echo $availableRoom['room_id'] ?>">
                           <input hidden type="text" name="Check-in" value="<?php echo $checkInDate; ?>">
@@ -213,19 +207,13 @@ $city = isset($_REQUEST['city']) ? $_REQUEST['city'] : 'Athens';
                       <div class="type_room">
                         <p>Type of Single Room :
                           <?php echo $roomType['title']; ?>
-
-                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              <?php } ?>
-
-
-
-
-              <!-- <div class=" thumbnail clean list-style">
-            </div> -->
+              <?php 
+                 } 
+              ?>
 
             <?php
             }
@@ -239,11 +227,6 @@ $city = isset($_REQUEST['city']) ? $_REQUEST['city'] : 'Athens';
           ?>
         </section>
 
-
-
-
-
-
       </div>
     </div>
 
@@ -256,7 +239,7 @@ $city = isset($_REQUEST['city']) ? $_REQUEST['city'] : 'Athens';
 
 </div>
 
-</div>
+
 <div class="f">
   <footer>
     <p>collegelink2022</p>

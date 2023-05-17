@@ -43,8 +43,9 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
 $allReviews = $review->getReviewsByRoom($roomId);
 // print_r($allReviews);die;
 // Check for booking room
-$checkInDate = $_REQUEST['check_in_date'];
-$checkOutDate = $_REQUEST['check_out_date'];
+$checkInDate = $_REQUEST['Check-in'];
+$checkOutDate = $_REQUEST['Check-out'];
+
 $alreadyBooked = !empty($checkInDate) && !empty($checkOutDate);
 
 if ($alreadyBooked) {
@@ -268,6 +269,7 @@ if ($alreadyBooked) {
       display: flex;
       flex-direction: column;
       padding-left: 20px;
+      margin-bottom: 5px;
     }
     .review1 {
       display: flex;
@@ -285,19 +287,33 @@ if ($alreadyBooked) {
       width: 150px;
       
     }
-
+    .Home a {
+      color: black;
+      text-decoration: none;
+    }
+    .Home a:hover {
+      color: red;
+    }
+    .Profile a:hover {
+      color:red;
+    }
     .g {
       display: flex;
       width: 100%;
       justify-content: end;
     }
 
-    .l {
+    .l input {
       display: flex;
-      width: 100%;
       justify-content: center;
+      background-color: #ff5722;
     }
-
+    input:hover {
+      background-color: red;
+    }
+    .room_description input {
+      background-color: green;
+    }
     header {
       grid-area: header;
       border-bottom: 1px solid grey;
@@ -386,11 +402,11 @@ if ($alreadyBooked) {
   <header>
     <div class="hotels">Hotels</div>
     <div class="home-profile">
-      <div class="Home"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+      <div class="Home"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16" ;>
           <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
         </svg><a href="../index.php" class="home">Home</a></div>
 
-      <div class="Profile"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+      <div class="Profile"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16" style="color:#ff5722">
           <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
         </svg><a href="register.php" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>Profile</a>
       </div>
@@ -500,16 +516,17 @@ if ($alreadyBooked) {
           ?>
             <span class="btn btn-brick button-disabled" style="background-color: red;">Already Booked</span>
           <?php
-          } else {
+             } else {
           ?>
             <form name="bookingForm" method="post" action="../actions/book.php">
               <input type="hidden" name="room_id" value="<?php echo $roomId  ?>">
               <input type="hidden" name="check_in_date" value="<?php echo $checkInDate; ?>">
               <input type="hidden" name="check_out_date" value="<?php echo $checkOutDate; ?>">
-              <button class="btn btn-brick" type="submit">Book now</button>
+              <!-- <button class="btn btn-brick" type="submit" style="background-color: green;">Book now</button> -->
+              <div class="l"><input type="submit" value="Book now"></div>
             </form>
           <?php
-          }
+            }
           ?>
         </div>
       </div>
@@ -548,6 +565,8 @@ if ($alreadyBooked) {
         <h2>Add review</h2>
         <form name="reviewForm" class="reviewForm" method="post" action="../actions/review.php">
           <input type="hidden" name="room_id" value="<?php echo $roomId  ?>">
+          <input type="hidden" name="Check-in" value="<?php echo $checkInDate?>">
+          <input type="hidden" name="Check-out" value="<?php echo $checkOutDate?>">
           <input type="hidden" name="csrf" value="<?php echo User::getCsrf();  ?>">
           <h4>
             <fieldset class="rating">

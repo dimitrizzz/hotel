@@ -4,7 +4,7 @@ require __DIR__ . '/../boot/boot.php';
 use Hotel\User;
 
 // Check for existing logged in user
-if (!empty(User::getCurrentUserId())) {
+if (empty(User::getCurrentUserId())) {
   header('Location: /public/index.php');
   die;
 }
@@ -29,9 +29,9 @@ if (!empty(User::getCurrentUserId())) {
 </header>
 <div class="container">
   <form method="post" action="../actions/register.php">
-    <?php if (!empty($_GET['error'])) ?>
-    <div class="alert alert-danger alert-styled-left">Register Error</div>
-    <?php  ?>
+    <!-- <?php if (empty($_GET['error'])) ?>
+    <div class="alert alert-danger alert-styled-left">Register Error</div>?>
+    <?php  ?> -->
 
 
     <div class="form-group">

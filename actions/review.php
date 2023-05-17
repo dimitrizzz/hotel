@@ -34,12 +34,13 @@ $csrf = $_REQUEST['csrf'];
 //     header('Location: /');
 //     return;
 // }
-
+$checkInDate = $_REQUEST['Check-in'];
+$checkOutDate = $_REQUEST['Check-out'];
 sprintf('Location: room.php?room_id=%s', $comment, $rate);
 // Add review
 $review = new Review();
-$review->insert($roomId, User::getCurrentUserId(), $_REQUEST['rating'], $_REQUEST['comment']);
+$review->insert($roomId, User::getCurrentUserId(), $_REQUEST['rating'], $_REQUEST['comment'] );
 
 
 // Return to home page
-header(sprintf('Location: ../assets/room.php?room_id=%s', $roomId));
+header(sprintf('Location: ../assets/room.php?room_id=%s&Check-in=%s&Check-out=%s' , $roomId,$checkInDate,$checkOutDate ));

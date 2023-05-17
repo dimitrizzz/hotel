@@ -50,7 +50,7 @@
             ':check_in_date' => $checkInDate,
             ':check_out_date' => $checkOutDate,
         ];
-        $this->execute('INSERT INTO booking(room_id , user_id , total_price , check_in_date, check_out_date) VALUES (:room_id , :user_id , :total_price , :check_in_date, :check_out_date)' , $parameters);
+        $this->execute('INSERT INTO booking (room_id , user_id , total_price , check_in_date, check_out_date) VALUES (:room_id , :user_id , :total_price , :check_in_date, :check_out_date)' , $parameters);
         // Step 5 , commit
         return $this->getPdo()->commit();
     
@@ -59,7 +59,7 @@
     
     public function isBooked($roomId, $checkInDate, $checkOutDate)
     {       $parameters = [
-                ':room_id '=> $roomId,
+                ':room_id'=> $roomId,
                 ':check_in_date' => $checkInDate,
                 ':check_out_date' => $checkOutDate,
              ];

@@ -17,7 +17,9 @@
         return  $this->fetchAll('SELECT review.* , room.name 
         FROM review
         INNER JOIN room ON review.room_id = room.room_id 
-        WHERE  user_id = :user_id' , $parameters);
+        WHERE  user_id = :user_id LIMIT 5'  , $parameters);
+        
+    
 	
        
 
