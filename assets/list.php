@@ -87,7 +87,7 @@ $city = isset($_REQUEST['city']) ? $_REQUEST['city'] : 'Athens';
       <div class="col-md-4' slidebar-top-small">
         <form name="searchForm" class="searchForm" method="post" action="list.php" onsubmit="return validateForm()">
           <div class="opts">
-            <h5 style=" color:white; background-color:#ff5722; 
+            <h5 style=" color:#ff5722; background-color:white; 
             padding:10px; ">FIND THE PERFECT ROOM</h5>
             <select class="Count" name="count_of_guests" data-placeholder="Count of Guests" style="border-radius: 10px;" required>
               <?php

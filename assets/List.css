@@ -214,6 +214,7 @@ img {
   flex-direction: column;
   width: 100%;
   padding-left: 10px;
+  padding-top: 20px;
 }
 
 
@@ -267,7 +268,9 @@ h4 {
   text-align: center;
   font-weight: 600;
 }
-
+.searchForm {
+  padding-top: 20px;
+}
 .price-content {
   display: flex;
   align-items: center;
@@ -291,7 +294,7 @@ p {
   margin: 15px 0 30px 0;
 }
 .img1{
-  /* padding-right: 10px; */
+  
   padding:10px;
 }
 input[type=range] {

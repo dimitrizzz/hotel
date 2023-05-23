@@ -55,6 +55,8 @@ $room = new Room();
       font-size: 20px;
       text-align: center;
       padding: 20px;
+      text-decoration: underline;
+        
     }
 
     h3 {
@@ -64,9 +66,14 @@ $room = new Room();
 
     p {
       margin: 0;
-      font-size: 17px;
+      font-size: 16px;
       display: flex;
       align-items: center;
+      font-weight: 600;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .Profile a {
@@ -169,11 +176,11 @@ $room = new Room();
       text-align: center;
     }
 
-    .price2 {
+    /* .price2 {
       font-size: 10px;
       display: flex;
       justify-content: space-between;
-    }
+    } */
 
     ol a:hover {
       color: red;
@@ -204,9 +211,15 @@ $room = new Room();
     header a:hover {
       color: red;
     }
-
-    .room-flex {
+    #room-list-item{
       background-color: aliceblue;
+    }
+    .img1{
+  
+  padding:10px;
+}
+    .room-flex {
+      
       display: flex;
       flex-wrap: wrap;
     }
@@ -214,7 +227,7 @@ $room = new Room();
     .hello {
       display: flex;
     }
-
+    
     .dtls {
       display: flex;
       flex-direction: row;
@@ -235,6 +248,7 @@ $room = new Room();
       display: flex;
       flex-wrap: wrap;
       background-color: aliceblue;
+      font-weight: 600;
     }
 
     .room_details p {
@@ -438,6 +452,7 @@ $room = new Room();
                 <?php
                 foreach ($userReviews as $review) {
                 ?>
+                <div class="stars">
                   <h2>
                     <li>
                       <h2>
@@ -460,6 +475,7 @@ $room = new Room();
                       </h2>
                     </li>
                   </h2>
+                  </div>
                 <?php
                 }
                 ?>
