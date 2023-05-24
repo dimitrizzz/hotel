@@ -6,17 +6,16 @@
     }
 
     header {
-      grid-area: header;
       border-bottom: 1px solid grey;
       display: flex;
+      grid-area: header;
       flex-direction: row;
       justify-content: space-around;
-      padding: 5px;
-      align-items: center;
-      /* width: 100%;
-      top: 89px;
+      padding: 10px;
+      position: fixed;
+      top: 0px;
       left: 0;
-      width: 100%; */
+      width: 100%;
     }
 
     .hotels {
@@ -69,6 +68,11 @@
     }
     .home {
       color: #ff5722;
+      text-decoration: none;
+      
+    }
+    .home:hover {
+      color: red;
     }
     input {
         width: 200px;
