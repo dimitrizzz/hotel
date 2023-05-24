@@ -1,8 +1,8 @@
 
     * {
       box-sizing: border-box;
-      width: 100vw;
-      height: 100vh;
+      /* width: 100vw;
+      height: 100vh; */
     }
 
     header {
@@ -13,10 +13,10 @@
       justify-content: space-around;
       padding: 5px;
       align-items: center;
-      width: 100%;
+      /* width: 100%;
       top: 89px;
       left: 0;
-      width: 100%;
+      width: 100%; */
     }
 
     .hotels {
@@ -53,6 +53,16 @@
         text-align: center;
         
     }
+    form {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      padding: 100px;
+    }
+    form input {
+      width: 300px;
+      height: 50px;
+    }
     .form-group{
         width: 100%;
         display: contents;
@@ -70,13 +80,19 @@
     
    button {
         background-color: #ff5722;
-    padding: 10px;
     margin: 5px;
     border: 1px;
+    height: 50px;
     border-radius: 5px;
     color: white;
-    width: 150px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    align-self: center;
+    padding: 15px;
     cursor: pointer;
+    width: 150px;
     }
     
 
@@ -86,15 +102,19 @@
     
 
     footer {
+      background-color: lightgrey;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      flex-direction: column;
       color: grey;
-          border-top: 2px solid grey;
-          text-align: center;
-          background-color: lightgrey;
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 50px;
+      grid-area: gamo;
+      border-top: 2px solid gray;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
     }
 
     @media screen and (min-width: 572px) {
